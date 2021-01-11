@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import {RoomContext} from "../context";
+import React, { Component } from "react";
+import { RoomContext } from "../context";
 
 export default class FeaturedRooms extends Component {
-  static contextType = RoomContext
+  static contextType = RoomContext;
   render() {
     const value = this.context;
     console.log(value);
-    return <div>hello from featured rooms {value}</div>
+    return <div>hello from featured rooms {value}</div>;
   }
 }

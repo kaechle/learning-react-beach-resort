@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
-import logo from '../images/logo.svg';
-import { FaAlignRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import logo from "../images/logo.svg";
+import { FaAlignRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
-  state={
-    isOpen: false
-  }
+  state = {
+    isOpen: false,
+  };
   handleToggler = () => {
-    this.setState({isOpen:!this.state.isOpen})
-  }
+    this.setState({ isOpen: !this.state.isOpen });
+  };
   render() {
     return (
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/">
-              <img src={ logo } alt="Beach Resort"/>
+              <img src={logo} alt="Beach Resort" />
             </Link>
-            <button type="button" className="nav-btn" onClick={this.handleToggler}>
+            <button
+              type="button"
+              className="nav-btn"
+              onClick={this.handleToggler}
+            >
               <FaAlignRight className="nav-icon" />
             </button>
           </div>
-          <ul className={this.state.isOpen?"nav-links show-nav":"nav-links"}>
+          <ul
+            className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
+          >
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -32,6 +38,6 @@ export default class Navbar extends Component {
           </ul>
         </div>
       </nav>
-    )
+    );
   }
 }
